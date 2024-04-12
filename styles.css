@@ -1,0 +1,193 @@
+/*
+Just to make everything prettier
+*/
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #f9f1e8;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*
+Styles for the MENU
+*/
+
+.arrow {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+.menu-container {
+    background-color: #222222;
+}
+
+.menu {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+
+    li {
+
+
+        &:hover .mega-menu {
+            display: flex;
+        }
+
+        &.menu-item-has-children {
+            >a::after {
+                content: "";
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 3px;
+                margin-left: 5px;
+                margin-bottom: 3px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+        }
+
+        &.current-menu-item {
+
+
+            >a {
+                background: white;
+                color: #222222;
+
+                &::after {
+                    border-color: #222222;
+                }
+            }
+        }
+
+
+        a {
+            color: #FFFFFF;
+            font-size: 1.8rem;
+            font-weight: 300;
+            font-style: normal;
+            line-height: 1;
+            text-decoration: none;
+            display: block;
+            padding: 20px 20px;
+            position: relative;
+            transition: 0.3s;
+
+            &:hover {
+                background: white;
+                color: #222222;
+
+                &::after {
+                    border-color: #222222;
+                }
+            }
+        }
+
+        .mega-menu {
+            /* display: flex; */
+            display: none;
+            position: absolute;
+            gap: 0;
+            background: white;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+
+            &::before {
+                content: "";
+                background: white;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                padding: 3px;
+                position: absolute;
+                margin-left: 15px;
+                margin-top: -5px;
+                margin-bottom: 0;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+            }
+
+            .mega-menu--col {
+                padding: 20px 0;
+
+                .sub-menu {
+                    list-style: none;
+                    padding-left: 0;
+                    margin-left: 0;
+                    margin-bottom: 30px;
+
+                    &:nth-last-child(1) {
+                        margin-bottom: 0px;
+
+                    }
+
+                    li {
+
+                        a {
+                            display: block;
+                            color: #333333;
+                            font-size: 1.4rem;
+                            font-weight: 400;
+                            font-style: normal;
+                            padding: 5px 15px 5px 25px;
+                            line-height: 1;
+
+                            &:hover {
+                                background: rgba(0, 0, 0, 0.3);
+                            }
+                        }
+
+                        &.header {
+                            a {
+                                color: #999999;
+                                padding: 5px 15px 5px 15px;
+                                transition: 0.3s;
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            .mega-menu--col:nth-child(even) {
+                background-color: #ececec;
+            }
+
+
+        }
+
+
+    }
+
+
+
+}
